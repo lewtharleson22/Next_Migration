@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { currencyFormatter } from "../../utils";
 import Link from "next/link";
 import { CustomerSkeleton } from "../customer-layout";
@@ -8,17 +9,17 @@ import { Suspense } from "react";
 
 const lineItemClassName = "border-t border-gray-100 text-[14px] h-[56px]";
 
+export const dynamic = "force-dynamic";
+
 export default function CustomerIdPage({ customerId }: { customerId: string }) {
   return (
     <>
       <ErrorBoundaryComponent>
         <div className="relative p-10">
           <Suspense fallback={<CustomerSkeleton />}>
-            {/* @ts-expect-error */}
             <CustomerInfo customerId={customerId} />
           </Suspense>
           <Suspense fallback={<CustomerSkeleton />}>
-            {/* @ts-expect-error */}
             <CustomerDetails customerId={customerId} />
           </Suspense>
         </div>

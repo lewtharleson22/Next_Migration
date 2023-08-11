@@ -6,6 +6,8 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import DeleteDepositForm from "@/components/forms/delete-deposit-form";
 
+export const dynamic = "force-dynamic";
+
 export default async function DepositRoute({
   params,
 }: {

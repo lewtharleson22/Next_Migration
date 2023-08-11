@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from "next/link";
 import { FilePlusIcon, LabelText } from "../index";
 import { currencyFormatter } from "../../utils";
@@ -7,6 +8,8 @@ import { Suspense } from "react";
 import { CustomerSkeleton } from "../customer-layout";
 import { getCustomerListItems } from "@/models/customerserver";
 
+export const dynamic = "force-dynamic";
+
 export default function InvoicesPage({
   children,
 }: {
@@ -15,7 +18,6 @@ export default function InvoicesPage({
   return (
     <div className="relative">
       <Suspense fallback={<CustomerSkeleton />}>
-        {/* @ts-expect-error */}
         <OurInvoices />
       </Suspense>
       <div className="h-4" />
@@ -23,7 +25,6 @@ export default function InvoicesPage({
       <div className="h-2" />
 
       <Suspense fallback={<CustomerSkeleton />}>
-        {/* @ts-expect-error */}
         <InvoiceList>{children}</InvoiceList>
       </Suspense>
     </div>

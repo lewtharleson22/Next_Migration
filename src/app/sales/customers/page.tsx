@@ -1,7 +1,3 @@
-export default function CustomersPage({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function CustomersPage() {
+  return null;
 }

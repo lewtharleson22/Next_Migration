@@ -1,7 +1,3 @@
-export default function InvoicesPage({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function InvoicesPage() {
+  return null;
 }

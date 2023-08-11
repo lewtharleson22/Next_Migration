@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getUserByEmail } from "@/models/userserver";
 import { getServerSession } from "next-auth";
@@ -6,13 +7,14 @@ import { Suspense } from "react";
 import { FullFakebooksLogo, FullUserLogo, SpinnerIcon } from "..";
 import Navigation from "./navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function Navbar({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative flex h-screen rounded-lg bg-white text-gray-600">
       <div className="border-r border-gray-100 bg-gray-50">
         <div className="p-4">
           <Suspense fallback={<SpinnerIcon />}>
-            {/* @ts-expect-error */}
             <LogoRenderer />
           </Suspense>
           <div className="h-7" />

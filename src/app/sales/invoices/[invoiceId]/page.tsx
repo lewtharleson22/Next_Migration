@@ -6,7 +6,7 @@ import { LineItem } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { getInvoiceDetails } from "@/models/invoiceserver";
 
-export const lineItemClassName =
+const lineItemClassName =
   "flex justify-between border-t border-gray-100 py-4 text-[14px] leading-[24px]";
 
 async function InvoiceRoute({ params }: { params: { invoiceId: string } }) {

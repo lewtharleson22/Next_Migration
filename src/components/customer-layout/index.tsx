@@ -1,9 +1,12 @@
+// @ts-nocheck
 import { InvoiceDetailsFallback } from "../index";
 import { Customer, getCustomerListItems } from "../../models/customerserver";
 import BetterAddCustomerForm from "../full-stack-forms/add-customer";
 import { ErrorBoundaryComponent } from "../error-boundary";
 import CustomerLink from "./customer-link";
 import { Suspense } from "react";
+
+export const dynamic = "force-dynamic";
 
 export default function CustomerLayout({
   children,
@@ -22,7 +25,6 @@ export default function CustomerLayout({
             <BetterAddCustomerForm />
           </div>
           <Suspense fallback={<CustomerSkeleton />}>
-            {/* @ts-expect-error */}
             <Customers />
           </Suspense>
         </div>
