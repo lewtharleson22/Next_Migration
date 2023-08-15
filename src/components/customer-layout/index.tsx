@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { InvoiceDetailsFallback } from "../index";
 import { Customer, getCustomerListItems } from "../../models/customerserver";
 import BetterAddCustomerForm from "../full-stack-forms/add-customer";
